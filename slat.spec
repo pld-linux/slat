@@ -1,12 +1,12 @@
 Summary:	Tools for information flow analysis of SELinux policies
 Summary(pl):	Narzêdzia do analizy przep³ywu informacji dla polityk SELinuksa
 Name:		slat
-Version:	1.2.4
+Version:	1.2.6
 Release:	1
 License:	GPL
 Group:		Applications/System
-Source0:	http://www.nsa.gov/selinux/archives/%{name}-%{version}.tgz
-# Source0-md5:	353348b3d234426820fa3887b8a97a11
+Source0:	http://www.nsa.gov/selinux/archives/%{name}-%{version}.tar.gz
+# Source0-md5:	1feb8e69f0d84ca9fe6427894a3bfed0
 Patch0:		%{name}-info.patch
 URL:		http://selinux.sf.net/
 BuildRequires:	autoconf >= 2.50

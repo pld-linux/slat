@@ -1,0 +1,11 @@
+--- slat-1.2.2/info/slat.texi.orig	2004-06-24 14:21:58.000000000 +0200
++++ slat-1.2.2/info/slat.texi	2004-07-03 12:10:27.929834544 +0200
+@@ -23,7 +23,7 @@
+ 
+ @dircategory SELinux Administration
+ @direntry
+-* slat: (slat)Invoking Slat Programs.  Running SELinux policy analysis tools.
++* slat: (slat)Invoking Slat Programs.	Running SELinux policy analysis tools
+ @end direntry
+ 
+ @c  This title page illustrates only one of the

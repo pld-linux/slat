@@ -8,13 +8,19 @@ Group:		Applications/System
 Source0:	http://www.nsa.gov/selinux/archives/%{name}-%{version}.tgz
 # Source0-md5:	db350dbbe29434c4d3b23ae1ea5c877b
 URL:		http://selinux.sf.net/
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake
+BuildRequires:	bison
+BuildRequires:	flex
+BuildRequires:	libstdc++-devel
+BuildRequires:	ocaml
+BuildRequires:	tetex-format-pdflatex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-## disable build root strip policy
-#%%define __spec_install_post /usr/lib/rpm/brp-compress || :
-#%%define debug_package %{nil}
-## Binaries created by O'Caml will fail to find the bytecode they
-## contain if they are stripped.
+# Binaries created by O'Caml will fail to find the bytecode they
+# contain if they are stripped.
+%define		_noautostrip		/usr/bin/slat
+%define		_enable_debug_packages	0
 
 %description
 Security-Enhanced Linux Analysis Tools (slat) provide a systematic way
@@ -25,12 +31,36 @@ moves throughout a system. We provide a simple syntax in which to
 express these goals, and tools that check a policy configuration
 against the goals.
 
+%description -l pl
+Narzêdzia slat (Security-Enhanced Linux Analysis Tools) udostêpniaj±
+systematyczny sposób na okre¶lanie, czy cele bezpieczeñstwa zosta³y
+osi±gniête przez dan± konfiguracjê polityki SELinuksa. W szczególno¶ci
+slat sprawdza cele bezpieczeñstwa zwi±zane z przep³ywem informacji,
+okre¶laj±ce po¿±dane ¶cie¿ki, którymi informacje przenosz± siê w
+systemie. slat udostêpnia prost± sk³adniê okre¶lania tych celów oraz
+narzêdzia sprawdzaj±ce zgodno¶æ konfiguracji polityki z tymi celami.
+
+%package devel
+Summary:	SLAT header files and static libraries
+Summary(pl):	Pliki nag³ówkowe i biblioteki statyczne SLAT
+Group:		Development/Libraries
+# doesn't require base
+
+%description devel
+SLAT header files and static libraries.
+
+%description devel -l pl
+Pliki nag³ówkowe i biblioteki statyczne SLAT.
+
 %prep
 %setup -q
 
 chmod +x configure
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 
 %{__make}
@@ -38,9 +68,11 @@ chmod +x configure
 %install
 rm -rf $RPM_BUILD_ROOT
 
-#%%makeinstall
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/{*.html,*.pdf,disk.txt}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -52,9 +84,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog NEWS README doc/slatspec.pdf
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/*
-%{_includedir}/%{name}
+%{_mandir}/man1/*.1*
 %{_infodir}/*.info*
-%{_datadir}/%{name}
+
+%files devel
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
+%{_includedir}/%{name}

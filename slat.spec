@@ -7,6 +7,7 @@ License:	GPL
 Group:		Applications/System
 Source0:	http://www.nsa.gov/selinux/archives/%{name}-%{version}.tgz
 # Source0-md5:	db350dbbe29434c4d3b23ae1ea5c877b
+Patch0:		%{name}-info.patch
 URL:		http://selinux.sf.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -15,6 +16,7 @@ BuildRequires:	flex
 BuildRequires:	libstdc++-devel
 BuildRequires:	ocaml
 BuildRequires:	tetex-format-pdflatex
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # Binaries created by O'Caml will fail to find the bytecode they
@@ -54,6 +56,7 @@ Pliki nag³ówkowe i biblioteki statyczne SLAT.
 
 %prep
 %setup -q
+%patch0 -p1
 
 chmod +x configure
 

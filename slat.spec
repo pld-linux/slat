@@ -8,7 +8,7 @@ Group:		Applications/System
 Source0:	http://www.nsa.gov/selinux/archives/%{name}-%{version}.tar.gz
 # Source0-md5:	1feb8e69f0d84ca9fe6427894a3bfed0
 Patch0:		%{name}-info.patch
-URL:		http://selinux.sf.net/
+URL:		http://selinux.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	bison

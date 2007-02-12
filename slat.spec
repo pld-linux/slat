@@ -1,5 +1,5 @@
 Summary:	Tools for information flow analysis of SELinux policies
-Summary(pl):	Narzêdzia do analizy przep³ywu informacji dla polityk SELinuksa
+Summary(pl.UTF-8):   NarzÄ™dzia do analizy przepÅ‚ywu informacji dla polityk SELinuksa
 Name:		slat
 Version:	1.2.6
 Release:	1
@@ -33,26 +33,26 @@ moves throughout a system. We provide a simple syntax in which to
 express these goals, and tools that check a policy configuration
 against the goals.
 
-%description -l pl
-Narzêdzia slat (Security-Enhanced Linux Analysis Tools) udostêpniaj±
-systematyczny sposób na okre¶lanie, czy cele bezpieczeñstwa zosta³y
-osi±gniête przez dan± konfiguracjê polityki SELinuksa. W szczególno¶ci
-slat sprawdza cele bezpieczeñstwa zwi±zane z przep³ywem informacji,
-okre¶laj±ce po¿±dane ¶cie¿ki, którymi informacje przenosz± siê w
-systemie. slat udostêpnia prost± sk³adniê okre¶lania tych celów oraz
-narzêdzia sprawdzaj±ce zgodno¶æ konfiguracji polityki z tymi celami.
+%description -l pl.UTF-8
+NarzÄ™dzia slat (Security-Enhanced Linux Analysis Tools) udostÄ™pniajÄ…
+systematyczny sposÃ³b na okreÅ›lanie, czy cele bezpieczeÅ„stwa zostaÅ‚y
+osiÄ…gniÄ™te przez danÄ… konfiguracjÄ™ polityki SELinuksa. W szczegÃ³lnoÅ›ci
+slat sprawdza cele bezpieczeÅ„stwa zwiÄ…zane z przepÅ‚ywem informacji,
+okreÅ›lajÄ…ce poÅ¼Ä…dane Å›cieÅ¼ki, ktÃ³rymi informacje przenoszÄ… siÄ™ w
+systemie. slat udostÄ™pnia prostÄ… skÅ‚adniÄ™ okreÅ›lania tych celÃ³w oraz
+narzÄ™dzia sprawdzajÄ…ce zgodnoÅ›Ä‡ konfiguracji polityki z tymi celami.
 
 %package devel
 Summary:	SLAT header files and static libraries
-Summary(pl):	Pliki nag³ówkowe i biblioteki statyczne SLAT
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe i biblioteki statyczne SLAT
 Group:		Development/Libraries
 # doesn't require base
 
 %description devel
 SLAT header files and static libraries.
 
-%description devel -l pl
-Pliki nag³ówkowe i biblioteki statyczne SLAT.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe i biblioteki statyczne SLAT.
 
 %prep
 %setup -q

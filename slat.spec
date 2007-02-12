@@ -1,5 +1,5 @@
 Summary:	Tools for information flow analysis of SELinux policies
-Summary(pl.UTF-8):   Narzędzia do analizy przepływu informacji dla polityk SELinuksa
+Summary(pl.UTF-8):	Narzędzia do analizy przepływu informacji dla polityk SELinuksa
 Name:		slat
 Version:	1.2.6
 Release:	1
@@ -44,7 +44,7 @@ narzędzia sprawdzające zgodność konfiguracji polityki z tymi celami.
 
 %package devel
 Summary:	SLAT header files and static libraries
-Summary(pl.UTF-8):   Pliki nagłówkowe i biblioteki statyczne SLAT
+Summary(pl.UTF-8):	Pliki nagłówkowe i biblioteki statyczne SLAT
 Group:		Development/Libraries
 # doesn't require base
 

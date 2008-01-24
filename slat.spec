@@ -79,11 +79,11 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/{*.html,*.pdf,disk.txt}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
+%post	-p	/sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
+%postun	-p	/sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
